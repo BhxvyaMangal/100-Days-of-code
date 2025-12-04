@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    char str[1000], res[1000];
+    int i = 0, j = 0;
+
+    fgets(str, 1000, stdin);
+
+    while(str[i] != '\0') {
+        char ch = str[i];
+        if(!(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u'||
+             ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U')) {
+            res[j++] = ch;
+        }
+        i++;
+    }
+
+    res[j] = '\0';
+
+    printf("%s", res);
+
+    return 0;
+}
