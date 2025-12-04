@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    char date[20];
+    int d, m, y;
+
+    scanf("%d/%d/%d", &d, &m, &y);
+
+    if(m == 1) printf("%02d-Jan-%d", d, y);
+    else if(m == 2) printf("%02d-Feb-%d", d, y);
+    else if(m == 3) printf("%02d-Mar-%d", d, y);
+    else if(m == 4) printf("%02d-Apr-%d", d, y);
+    else if(m == 5) printf("%02d-May-%d", d, y);
+    else if(m == 6) printf("%02d-Jun-%d", d, y);
+    else if(m == 7) printf("%02d-Jul-%d", d, y);
+    else if(m == 8) printf("%02d-Aug-%d", d, y);
+    else if(m == 9) printf("%02d-Sep-%d", d, y);
+    else if(m == 10) printf("%02d-Oct-%d", d, y);
+    else if(m == 11) printf("%02d-Nov-%d", d, y);
+    else if(m == 12) printf("%02d-Dec-%d", d, y);
+
+    return 0;
+}
