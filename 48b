@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+    char str[1000], res[1000];
+    int i = 0, j = 0, start, end, k;
+
+    fgets(str, 1000, stdin);
+
+    while(str[i] != '\0') {
+        if(str[i] == ' ' || str[i] == '\n') {
+            end = j - 1;
+            start = i - (end - (j - 1)) - (j > 0 ? 1 : 0);
+            for(k = i - 1; k >= start; k--)
+                res[j++] = str[k];
+            res[j++] = str[i];
+        }
+        i++;
+    }
+
+    res[j] = '\0';
+
+    printf("%s", res);
+
+    return 0;
+}
+
