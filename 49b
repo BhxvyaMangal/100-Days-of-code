@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+    char str[1000];
+    int i = 0, start = 0, last = -1;
+
+    fgets(str, 1000, stdin);
+
+    while(str[i] != '\0') {
+        if(str[i] == ' ' && str[i+1] != ' ' && str[i+1] != '\n')
+            last = i + 1;
+        i++;
+    }
+
+    i = 0;
+
+    while(str[i] != '\0' && i != last) {
+        if(i == 0 && str[i] != ' ')
+            printf("%c ", str[i]);
+        if(str[i] == ' ' && str[i+1] != ' ' && (i+1) != last)
+            printf("%c ", str[i+1]);
+        i++;
+    }
+
+    if(last != -1)
+        printf("%s", &str[last]);
+
+    return 0;
+}
+
